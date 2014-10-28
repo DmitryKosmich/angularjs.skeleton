@@ -1,0 +1,41 @@
+<div>
+    <tabset>
+        <tab heading="Global Selector">
+            <div>
+                <h1>{{name}}</h1>
+                <hr>
+                <div>
+                    <form class="form" role="form">
+
+                        <div class="form-group">
+                            <label for="new-title" class="col-sm-2 control-label">New Title</label>
+                            <div class="input-group col-sm-22">
+                                <input type="text" class="form-control" ng-model="name" id="new-title">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" ng-click="renameNode()">Rename</button>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="add-child" class="col-sm-2 control-label">Add Child</label>
+                            <div class="input-group col-sm-22">
+                                <input type="text" class="form-control" ng-model="childName" id="add-child">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" ng-click="addNode()">Add</button>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-22">
+                                <button type="submit" class="btn btn-default" ng-click="deleteNode()" id="delete-child">Delete</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </tab>
+    </tabset>
+</div>

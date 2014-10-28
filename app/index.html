@@ -6,46 +6,106 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-  <link rel="stylesheet" href="bower_components/angular-ui-tree/dist/angular-ui-tree.min.css">
+  <link rel="stylesheet" href="css/tree.css">
   <link rel="stylesheet" href="css/styles.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body  ng-controller="View1Ctrl">
+<body>
 
-  <nav class="navbar navbar-default">
-      <ul class="nav navbar-nav navbar-left">
-          <li class="panel-title"><a href="#/view1" data-localize="map">View1</a></li>
-          <li class="panel-title"><a href="#/view2" data-localize="countries">View2</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-          <li  class="panel-title"><a href="#" data-localize="home">Home</a></li>
-      </ul>
-  </nav>
+      <!--[if lt IE 7]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+      <div class="wrapper container">
+          <header>
+          </header>
 
-  <div ng-view></div>
+          <div class="content">
+              <nav class="navbar navbar-default">
+                  <ul class="nav navbar-nav navbar-left">
+                      <li class="panel-title"><a ui-sref="tree-view">Access</a></li>
+                      <li class="panel-title"><a ui-sref="other-view">New Records</a></li>
+                      <li class="panel-title"><a href="#">Financial</a></li>
+                      <li class="panel-title"><a href="#">Administration</a></li>
+                      <li class="panel-title"><a href="#">Configure</a></li>
+                      <li class="panel-title"><a href="#">Reports</a></li>
+                      <li class="panel-title"><a href="#">Archive</a></li>
+                      <li class="panel-title"><a href="#">Help</a></li>
+                  </ul>
+              </nav>
 
-  <div>Angular seed app: v<span app-version></span></div>
+              <div class="heading">
+                  <a href="#"><img src="image/18.png" class="menuImg"></a>
+                  <a href="#"><img src="image/17.png" class="menuImg"></a>
+                  <a href="#"><img src="image/71.png" class="menuImg"></a>
+                  <a href="#"><img src="image/23.png" class="menuImg"></a>
+                  <a href="#"><img src="image/25.png" class="menuImg"></a>
+                  <a href="#"><img src="image/57.png" class="menuImg"></a>
+                  <a href="#"><img src="image/76.png" class="menuImg"></a>
+                  <a href="#"><img src="image/43.png" class="menuImg"></a>
+                  <a href="#"><img src="image/diskette.png" class="menuImg"></a>
+                  <a href="#"><img src="image/1.png" class="menuImg"></a>
+              </div>
+
+              <div ui-view></div>
+
+          </div>
+
+          <footer class="text-left">
+
+              <div class="lock-footer">
+                  <img src="image/lock_open.png"> User: ADMIN 10/22/2014 10:48
+              </div>
+              <!--<div>Trac master: v<span app-version></span></div>-->
+          </footer>
+      </div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
-  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
-  <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
-  <script type="text/javascript" src="bower_components/angular-ui-tree/dist/angular-ui-tree.min.js"></script>
-  <script src="app.js"></script>
-  <script src="js/controllers/view1/view1.js"></script>
-  <script src="js/controllers/view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+      <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+
+      <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+      <script type="text/javascript" src="bower_components/angular-tree-control/angular-tree-control.js"></script>
+      <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+      <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+      <script src="app.js"></script>
+      <script src="js/controllers/tree/tree-ctrl.js"></script>
+
+      <script src="js/controllers/tree/content/trac-units-ctrl.js"></script>
+      <script src="js/controllers/tree/content/companies-ctrl.js"></script>
+      <script src="js/controllers/tree/content/trac-master-ctrl.js"></script>
+      <script src="js/controllers/tree/content/bill-of-ladings-ctrl.js"></script>
+      <script src="js/controllers/tree/content/certifications-ctrl.js"></script>
+      <script src="js/controllers/tree/content/invoices-ctrl.js"></script>
+      <script src="js/controllers/tree/content/parts-ctrl.js"></script>
+      <script src="js/controllers/tree/content/processes-ctrl.js"></script>
+      <script src="js/controllers/tree/content/receives-ctrl.js"></script>
+      <script src="js/controllers/tree/content/schedules-ctrl.js"></script>
+      <script src="js/controllers/tree/content/shippers-ctrl.js"></script>
+
+      <script src="js/controllers/other/other-ctrl.js"></script>
+
+      <script src="js/services/tree-node-service.js"></script>
+      <script src="js/services/constant-event.js"></script>
+
+      <script src="components/version/version.js"></script>
+      <script src="components/version/version-directive.js"></script>
+      <script src="components/version/interpolate-filter.js"></script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+<div class="row">
+
+    <aside class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Trac Master</div>
+            <div class="panel-body">
+                <div class="tree_wrapper">
+                    <div treecontrol class="tree-classic"
+                         tree-model="dataForTheTree"
+                         options="treeOptions"
+                         on-selection="showSelected(node)"
+                         selected-node="node1"
+                         expanded-nodes="expandedNodes">
+                        {{node.title}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <section class="col-md-18">
+        <div class="panel panel-primary">
+            <div class="panel-heading">{{contentPanelTitle || "Content"}} </div>
+            <div class="panel-body" >
+                <div ui-view></div>
+            </div>
+        </div>
+    </section>
+
+</div>

@@ -1,0 +1,147 @@
+<div>
+    <tabset>
+        <tab heading="Selector">
+            <div>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="CustomerId" class="col-sm-4 control-label">Customer Id</label>
+                        <div class="input-group col-sm-20">
+                            <input type="text" class="form-control" id="CustomerId" placeholder="Customer Id">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">List...</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="CustomerName" class="col-sm-4 control-label">Customer Name</label>
+                        <div class="col-sm-20">
+                            <input type="text" class="form-control" id="CustomerName" placeholder="Customer Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="AccountCode" class="col-sm-4 control-label">Account Code</label>
+                        <div class="col-sm-20">
+                            <input type="text" class="form-control" id="AccountCode" placeholder="Account ode">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="LocationId" class="col-sm-4 control-label">Location Id</label>
+                        <div class="col-sm-20">
+                            <input type="text" class="form-control" id="LocationId" placeholder="Location Id">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="City" class="col-sm-4 control-label">City</label>
+                        <div class="col-sm-20">
+                            <input type="text" class="form-control" id="City" placeholder="City">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="State" class="col-sm-4 control-label">State</label>
+                        <div class="col-sm-20">
+                            <input type="text" class="form-control" id="State" placeholder="State">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Zip" class="col-sm-4 control-label">Zip</label>
+                        <div class="col-sm-20">
+                            <input type="text" class="form-control" id="Zip" placeholder="Zip">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Route" class="col-sm-4 control-label">Route</label>
+                        <div class="col-sm-20">
+                            <input type="text" class="form-control" id="Route" placeholder="Route">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Keywords" class="col-sm-4 control-label">Keywords-&gt; Node</label>
+                        <div class="col-sm-20">
+                            <input type="text" class="form-control" id="Keywords" placeholder="Keywords->Node">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-20">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Select Inactive Records
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-20">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Select Outsource Service Company only
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="MaxRecords" class="col-sm-4 control-label">Max. Records</label>
+                        <div class="col-sm-20">
+                            <input type="text" class="form-control" id="MaxRecords" placeholder="Max Records">
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="form-group text-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default">Apply</button>
+                            <button type="button" class="btn btn-default">Restore Default</button>
+                            <button type="button" class="btn btn-default">Set Default</button>
+                            <button type="button" class="btn btn-default">Clear</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </tab>
+        <tab heading="Customer List">
+            <div>
+                <div class="table_wrapper">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>Customer Id</td>
+                                <td>Customer Name</td>
+                                <td>Location Id</td>
+                                <td>Route</td>
+                                <td>Address1</td>
+                                <td>Address2</td>
+                                <td>City</td>
+                                <td>State</td>
+                                <td>Zip</td>
+                                <td>Other</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in tableData">
+                                <td>{{item.CustomerId}}</td>
+                                <td>{{item.CustomerName}}</td>
+                                <td>{{item.LocationId}}</td>
+                                <td>{{item.Route}}</td>
+                                <td>{{item.Address1}}</td>
+                                <td>{{item.Address2}}</td>
+                                <td>{{item.City}}</td>
+                                <td>{{item.State}}</td>
+                                <td>{{item.Zip}}</td>
+                                <td>{{item.Other}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr/>
+                <div class="form-group text-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default">Print Company</button>
+                        <button type="button" class="btn btn-default">Print List</button>
+                    </div>
+                </div>
+            </div>
+        </tab>
+        <tab heading="Add Company">
+            <div>
+            </div>
+        </tab>
+    </tabset>
+</div>
