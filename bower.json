@@ -13,6 +13,7 @@
     "angular-ui-router": "0.2.x",
     "angular-tree-control": "0.2.x",
     "html5-boilerplate": "~4.3.0",
-    "es5-shim": "2.3.x"
+    "es5-shim": "2.3.x",
+    "bootstrap": "3.2.x"
   }
 }

@@ -22,20 +22,14 @@ hr{
   padding: 0;
 }
 
-td {
-  min-width: 50px;
-}
-
-thead td{
-  font-weight: bold;
-}
-
-tbody td{
-  background-color: @body-bg;
-}
-
-form {
-  padding: 15px 0 0 0;
+.table-hover {
+  > tbody > tr:hover {
+    > td,
+    > th {
+      background-color: @table-bg-hover;
+      cursor: pointer;
+    }
+  }
 }
 
 .form-control {
@@ -66,7 +60,7 @@ form {
   word-wrap: normal;
 }
 
-.nav, .pagination, .carousel, .panel-title a {
+a {
   cursor: pointer;
 }
 
@@ -104,7 +98,7 @@ body {
       }
 
       .menuImg:hover {
-        background-color: #fff;
+        background-color: lighten(@brand-primary, 40%);
       }
 
       h1 {
@@ -123,22 +117,6 @@ body {
       margin-bottom: -@footer-height;
       padding-bottom: @footer-height;
     }
-
-    .form-group {
-      padding: 5px;
-      margin: 5px;
-    }
-
-    .input-group {
-      padding-right: 15px;
-      padding-left: 15px;
-    }
-
-    .table_wrapper {
-      overflow-x: auto;
-      max-width: @table-width-min;
-      padding-top: 10px;
-    }
   }
 
   footer {
@@ -155,4 +133,91 @@ body {
       }
     }
   }
+}
+
+//--------------------Table-----------------
+
+.table_wrapper {
+  overflow-x: auto;
+  max-width: @table-width-min;
+  padding-top: 10px;
+
+  .table_td {
+    min-width: 50px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+
+  thead > tr > td{
+    font-weight: bold;
+    .table_td;
+  }
+
+  tbody > tr > td{
+    background-color: @input-bg;
+    .table_td;
+  }
+}
+
+//--------------------Form-----------------
+
+.legend-block {
+  border: 1px solid @panel-inner-border;
+  padding: 10px;
+
+  button {
+    height: @input-height-base;
+    font-size: @input-height-base + (-9px);
+    padding: 1px 10px 1px 10px;
+  }
+}
+
+form {
+  padding: 15px 0 0 0;
+
+  .legend-block .form-group{
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+}
+
+div.ng-scope section div.panel-body  div > form > div {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.form-group {
+
+  .input-group {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .input-group-btn {
+    button {
+      height: @input-height-base;
+      font-size: @input-height-base + (-9px);
+      padding: 1px 10px 1px 10px;
+    }
+  }
+
+  label{
+    font-size: 11px;
+    padding: 0;
+  }
+
+  .control-label{
+    padding-top: 1px;
+  }
+
+  .checkbox {
+    padding-top: 0;
+  }
+}
+.tab-content{
+  border: none 1px 1px 1px;
 }

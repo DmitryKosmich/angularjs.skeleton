@@ -1,40 +1,401 @@
 <div>
     <tabset>
         <tab heading="Global Selector">
-            <div>
-                <h1>{{name}}</h1>
-                <hr>
-                <div>
-                    <form class="form" role="form">
-
-                        <div class="form-group">
-                            <label for="new-title" class="col-sm-2 control-label">New Title</label>
-                            <div class="input-group col-sm-22">
-                                <input type="text" class="form-control" ng-model="name" id="new-title">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button" ng-click="renameNode()">Rename</button>
-                                </span>
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="StartDate" class="col-sm-8 control-label">Start Date</label>
+                                <div class="input-group col-sm-16">
+                                    <input type="text" id="StartDate" class="form-control"
+                                           datepicker-popup="{{format}}"
+                                           ng-model="dt"
+                                           is-open="opened"
+                                           min-date="minDate"
+                                           max-date="'2015-06-22'"
+                                           datepicker-options="dateOptions"
+                                           date-disabled="disabled(date, mode)"
+                                           ng-required="true"
+                                           close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)">
+                                            <i class="glyphicon glyphicon-calendar"></i>
+                                        </button>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="add-child" class="col-sm-2 control-label">Add Child</label>
-                            <div class="input-group col-sm-22">
-                                <input type="text" class="form-control" ng-model="childName" id="add-child">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button" ng-click="addNode()">Add</button>
-                                </span>
+                            <div class="form-group">
+                                <label for="EndDate" class="col-sm-8 control-label">End Date</label>
+                                <div class="input-group col-sm-16">
+                                    <input type="text" id="EndDate" class="form-control"
+                                           datepicker-popup="{{format}}"
+                                           ng-model="dt"
+                                           is-open="opened"
+                                           min-date="minDate"
+                                           max-date="'2015-06-22'"
+                                           datepicker-options="dateOptions"
+                                           date-disabled="disabled(date, mode)"
+                                           ng-required="true"
+                                           close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)">
+                                            <i class="glyphicon glyphicon-calendar"></i>
+                                        </button>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-22">
-                                <button type="submit" class="btn btn-default" ng-click="deleteNode()" id="delete-child">Delete</button>
+                            <div class="form-group">
+                                <label for="CustomerId" class="col-sm-8 control-label">Customer Id</label>
+                                <div class="input-group col-sm-16">
+                                    <input type="text" class="form-control" id="CustomerId">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">List...</button>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
+                            <div class="form-group">
+                                <label for="ReceiverRef" class="col-sm-8 control-label">Receiver Ref.#</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="ReceiverRef">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="CastPO" class="col-sm-8 control-label">Cast.PO</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="CastPO">
+                                </div>
+                            </div>
 
-                    </form>
+                            <br/>
+
+                            <div class="form-group">
+                                <label for="PartNumber" class="col-sm-8 control-label">Part Number</label>
+                                <div class="input-group col-sm-16">
+                                    <input type="text" class="form-control" id="PartNumber">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">List...</button>
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="PartRevision" class="col-sm-8 control-label">Part Revision</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="PartRevision">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Material" class="col-sm-8 control-label">Material</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="Material">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ProcessId" class="col-sm-8 control-label">Process Id</label>
+                                <div class="input-group col-sm-16">
+                                    <input type="text" class="form-control" id="ProcessId">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">List...</button>
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ProcessRevision" class="col-sm-8 control-label">Process Revision</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="ProcessRevision">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Madifier" class="col-sm-8 control-label">Madifier</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="Madifier">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Operation" class="col-sm-8 control-label">Operation</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="Operation">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Station/Template" class="col-sm-8 control-label">Station/Template</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="Station/Template">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="HeatNumber" class="col-sm-8 control-label">Heat Number</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="HeatNumber">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="HeatCode" class="col-sm-8 control-label">Heat Code</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="HeatCode">
+                                </div>
+                            </div>
+
+                            <label for="ProcessedByLegendId" class="control-label">Processed By</label>
+                            <div class="legend-block" id="ProcessedByLegendId">
+                                <div class="form-group">
+                                    <label for="Station" class="col-sm-8 control-label">Station</label>
+                                    <div class="input-group col-sm-16">
+                                        <input type="text" class="form-control" id="Station" value="None">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a ui-sref="{{tree-view.trac-master}}">Station 1</a></li>
+                                                <li><a ui-sref="{{tree-view.trac-master}}">Station 2</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ProcessId2" class="col-sm-8 control-label">Process Id</label>
+                                    <div class="col-sm-16">
+                                        <input type="text" class="form-control" id="ProcessId2">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Operation1" class="col-sm-8 control-label">Operation</label>
+                                    <div class="col-sm-16">
+                                        <input type="text" class="form-control" id="Operation1">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br/>
+
+                            <div class="form-group">
+                                <label for="MaxRecords" class="col-sm-8 control-label">Max. Records</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="MaxRecords">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+
+                <div class="col-md-12">
+                    <div>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="TracUnit" class="col-sm-8 control-label">Trac Unit</label>
+                                <div class="input-group col-sm-16">
+                                    <input type="text" class="form-control" id="TracUnit" value="Trac Units">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a ui-sref="{{tree-view.trac-master}}">Trac Unit 1</a></li>
+                                            <li><a ui-sref="{{tree-view.trac-master}}">Trac Unit 2</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="MergenForm" class="col-sm-8 control-label">Mergen Form</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="MergenForm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ReceiverIdTrac" class="col-sm-8 control-label">Receiver Id</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="ReceiverIdTrac">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ShipperId" class="col-sm-8 control-label">Shipper Id</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="ShipperId">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="InvoiceId" class="col-sm-8 control-label">Invoice Id</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="InvoiceId">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="CertId" class="col-sm-8 control-label">Cert Id</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="CertId">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="AccountingCode" class="col-sm-8 control-label">Accounting Code</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="AccountingCode">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Route" class="col-sm-8 control-label">Route</label>
+                                <div class="col-sm-16">
+                                    <input type="text" class="form-control" id="Route">
+                                </div>
+                            </div>
+
+                            <label for="StateLegendBlockId" class="control-label">State</label>
+                            <div class="legend-block" id="StateLegendBlockId">
+                                <div class="form-group">
+                                    <div class="col-sm-offset-8 col-sm-16">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Expected
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-8 col-sm-16">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Received
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-8 col-sm-16">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Scheduled
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-8 col-sm-16">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> In Process
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-8 col-sm-16">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Finished Process
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-8 col-sm-16">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Shipped
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-8 col-sm-16">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Delivered
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-8 col-sm-16">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Outsourced
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-8 col-sm-16">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Merged
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group text-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default">In House</button>
+                                        <button type="button" class="btn btn-default">Deselect</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br/>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-8 col-sm-16">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Reworked
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal" role="form">
+
+                            <label for="ProcessAssignedLegendId" class="control-label">Process Assigned</label>
+                            <div class="legend-block" id="ProcessAssignedLegendId">
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label>
+                                                <input type="radio" name="inputWalls" id="processAssignedYes" value="processAssignedYes"> Yes
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="inputWalls" id="processAssignedNo" value="processAssignedNo"> No
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="inputWalls" id="processAssignedDontCare" value="processAssignedDontCare" checked> Don't Care
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <form class="form-horizontal" role="form">
+                            <label for="InvoicedLegendId" class="control-label">Invoiced</label>
+                            <div class="legend-block" id="InvoicedLegendId">
+                                <div class="form-group">
+                                    <div class="text-center">
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label>
+                                                <input type="radio" name="inputWalls" id="invoicedYes" value="invoicedYes"> Yes
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="inputWalls" id="invoicedNo" value="invoicedNo"> No
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="inputWalls" id="invoicedDontCare" value="invoicedDontCare" checked> Don't Care
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div><hr/>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default">Apply</button>
+                <button type="button" class="btn btn-default">Restore Default</button>
+                <button type="button" class="btn btn-default">Set Default</button>
+                <button type="button" class="btn btn-default">Clear</button>
             </div>
         </tab>
     </tabset>

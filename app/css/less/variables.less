@@ -25,8 +25,13 @@
 @text-color: #696969;
 
 @input-bg: #fff;
-@input-border: @panel-inner-border;
+@input-border: darken(@panel-inner-border, 10%);
 @input-color: @text-color;
+@input-height-base: 20px;
+@input-color-placeholder: #c4c4c4;
+@input-border-focus: @brand-primary;
+
+@btn-default-bg: lighten(@brand-primary, 50%);
 
 @navbar-height: 35px;
 @nav-link-padding: 10px 30px;
@@ -48,3 +53,4 @@
 @footer-height: 52px;
 
 @table-width-min: 800px;
+@table-bg-hover: lighten(@brand-primary, 40%);

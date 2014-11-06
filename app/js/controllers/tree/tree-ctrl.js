@@ -11,6 +11,8 @@
 
         $scope.expandedNodes =  [$scope.dataForTheTree[0]];
 
+        $scope.selected = $scope.dataForTheTree[0];
+
         $scope.showSelected = function(node){
 
             TREE.setCurrentNode(node);
@@ -18,9 +20,9 @@
 
             var currNode = TREE.getCurrentNode();
 
-            $scope.contentPanelTitle = currNode.title;
-
             if(currNode){
+                $scope.contentPanelTitle = currNode.title;
+
                 switch (currNode.title){
                     case CONST.TREE_ITEM.TRAC_MASTER: {
                         $state.go('tree-view.trac-master');

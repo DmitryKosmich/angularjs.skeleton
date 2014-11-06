@@ -8,7 +8,9 @@
         $scope.name = TREE.getCurrentNode().title;
 
         $scope.$on(CONST.EVENT.ON_TREE_NODE_SELECT, function (event, data) {
-            $scope.name = data.title;
+            if(data && data.title) {
+                $scope.name = data.title;
+            }
         });
 
         $scope.deleteNode = function(){
@@ -22,6 +24,10 @@
 
         $scope.addNode = function(){
             TREE.addNode($scope.childName);
+        };
+
+        $scope.goTo = function(stateName){
+            $state.go(stateName);
         };
 
         $scope.tableData = [

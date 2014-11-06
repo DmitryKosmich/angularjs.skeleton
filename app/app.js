@@ -27,7 +27,7 @@ var app = {};
 
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise("/tree");
+        $urlRouterProvider.otherwise("/tree/tree-trac-master");
 
         $stateProvider
             .state('tree-view', {
